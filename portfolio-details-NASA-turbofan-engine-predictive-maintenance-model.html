@@ -114,21 +114,16 @@
               <div class="swiper-wrapper align-items-center">
 
                 <div class="swiper-slide">
-                  <img src="assets/img/portfolio/app-1.jpg" alt="">
+                  <img src="assets/img/predictive maintenance model/Turbofan engine.jpg" alt="">
                 </div>
 
                 <div class="swiper-slide">
-                  <img src="assets/img/portfolio/product-1.jpg" alt="">
+                  <img src="assets/img/predictive maintenance model/Turbofan engine schematic.png" alt="">
                 </div>
 
                 <div class="swiper-slide">
-                  <img src="assets/img/portfolio/branding-1.jpg" alt="">
+                  <img src="assets/img/predictive maintenance model/Turbofan-engine-schematic.png" alt="">
                 </div>
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/books-1.jpg" alt="">
-                </div>
-
               </div>
               <div class="swiper-pagination"></div>
             </div>
@@ -138,9 +133,8 @@
             <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
               <h3>Project information</h3>
               <ul>
-                <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
-                <li><strong>Github Rep</strong>: <a href="#">www.example.com</a></li>
-                <li><strong>Project date</strong>: 18 Feb, 2025</li>
+                <li><strong>Github Repository</strong>: <a href="https://github.com/STBreeze/Predictive-Maintenance-model-for-the-NASA-Turbofan-Engine-Challenge.git">here</a></li>
+                <li><strong>Project date</strong>: 2 Feb, 2025</li>
                 
               </ul>
             </div>
@@ -202,6 +196,22 @@
       </div>
 
       <div class="container section-title" data-aos="fade-up">
+        <img src="assets/img/predictive maintenance model/SubPlot_All Sensors LifeCycle (Global Representation)_Train Set.png" alt="" style="display: block; margin: 0 auto; max-width: 80%; height: auto;">
+        <p style="margin-top: 20px;">This graph visualizes the lifecycle of all engines, color-coded across 3 operational settings and 21 sensors of the training set.
+          It highlights global degradation trends, with some sensors remaining constant (suitable for omission) and others showing accelerating, decelerating, or mixed patterns.
+          <i>Sensors 9 & 14</i> exhibit mixed trends, while <i>Operational Setting 2</i> has discrete values.
+        </p>
+      </div>
+
+      <div class="container section-title" data-aos="fade-up">
+        <img src="assets/img/predictive maintenance model/Engine 59_Sensor 9_Anomaly Plot.png" alt="" style="display: block; margin: 0 auto; max-width: 80%; height: auto;">
+        <img src="assets/img/predictive maintenance model/Engine 59_Sensor 9_Anomaly Handled Plot.png" alt="" style="display: block; margin: 0 auto; max-width: 80%; height: auto;">
+        <p style="margin-top: 20px;">The two images highlight the before & after stages of the anomaly handling process. Using a percentile-based method, 5% of the extreme ends of the data was taken as anomalies.
+          These anomalies were determined by taking the difference between the predicted datapoints, from the polynomial regression line, and the actual datapoints.
+          Upon identifying the anomalies, they were replaced by the predicted datapoints, as dropping them would reduce the overall data quantity.</p>
+      </div>
+
+      <div class="container section-title" data-aos="fade-up">
         <h2>Results</h2>
         <ul style="margin-top: 10px; margin-bottom: 12px;">
           <li>Mean Squared Error (MSE): 661.31</li>
@@ -210,21 +220,18 @@
             <li>Absolute Percentage Error (MAPE): 0.31</li>
             <li>R² Score: 0.62</li>
         </ul>
+        <p style="margin-top: 20px;">The images below indicate the result differences between the predicted and actual RULs</p>
+      </div>
+
+      <div class="container section-title" data-aos="fade-up">
+        <img src="assets/img/predictive maintenance model/Actual vs Predicted RULs_Max LifeCycle.png" alt="" style="display: block; margin: 0 auto; max-width: 90%; height: auto;">
+        <img src="assets/img/predictive maintenance model/Actual vs Predicted RULs_Line Plot.png" alt="" style="display: block; margin: 0 auto; max-width: 90%; height: auto;">
       </div>
 
       <div class="container section-title" data-aos="fade-up">
         <h2>Conclusion</h2>
         <p>The predictive maintenance model successfully forecasts the RUL of turbofan engines with reasonable accuracy. The use of time-series features and robust anomaly handling improved the model's performance. However, there is room for improvement in handling noise and capturing complex trends.</p>
       </div>
-
-
-
-
-
-
-
-
-
 
     </section><!-- End of Project Details Section -->
 

@@ -75,11 +75,11 @@
     <!-- Page Title -->
     <div class="page-title dark-background">
       <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0">SpaceX Falcon 9 First Stage Landing Prediction<i>(IBM Course Capstone Project)</i></h1>
+        <h1 class="mb-2 mb-lg-0">SpaceX Falcon 9 First Stage Landing Prediction</h1>
         <nav class="breadcrumbs">
           <ol>
             <li><a href="index.html">Home</a></li>
-            <li class="current">Predictive Maintenance Model</li>
+            <li class="current">SpaceX F9 Landing Prediction</li>
           </ol>
         </nav>
       </div>
@@ -114,16 +114,21 @@
               <div class="swiper-wrapper align-items-center">
 
                 <div class="swiper-slide">
-                  <img src="assets/img/predictive maintenance model/Turbofan engine.jpg" alt="">
+                  <img src="assets/img/SpaceX Capstone/Falcon 9_2.jpg" alt="">
                 </div>
 
                 <div class="swiper-slide">
-                  <img src="assets/img/predictive maintenance model/Turbofan engine schematic.png" alt="">
+                  <img src="assets/img/SpaceX Capstone/Falcon 9_4.jpg" alt="">
                 </div>
 
                 <div class="swiper-slide">
-                  <img src="assets/img/predictive maintenance model/Turbofan-engine-schematic.png" alt="">
+                  <img src="assets/img/SpaceX Capstone/Falcon 9_3.jpg" alt="">
                 </div>
+
+                <div class="swiper-slide">
+                  <img src="assets/img/SpaceX Capstone/Falcon 9_1.jpg" alt="">
+                </div>
+
               </div>
               <div class="swiper-pagination"></div>
             </div>
@@ -133,16 +138,16 @@
             <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
               <h3>Project information</h3>
               <ul>
-                <li><strong>Github Repository</strong>: <a href="https://github.com/STBreeze/Predictive-Maintenance-model-for-the-NASA-Turbofan-Engine-Challenge.git">Check it out</a></li>
-                <li><strong>Project date</strong>: 2 Feb, 2025</li>
+                <li><strong>Github Repository</strong>: <a href="https://github.com/STBreeze/IBM-Data-Science-Capstone.git">here</a></li>
+                <li><strong>Project date</strong>: 10 Aug, 2024</li>
                 
               </ul>
             </div>
             <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
               <h2>Project Overview</h2>
               <p style="text-align: justify;">
-                This project focuses on developing a predictive maintenance model for the NASA Turbofan Engine Degradation Dataset. The goal is to predict the Remaining Useful Life (RUL) of turbofan engines. By doing so, maintenance strategies can be optimized, reducing costs and preventing unexpected failures.
-                The model uses a hybrid combination of regressive prediction with time-series features incorporated to predict the RUL. This is because traditional SARIMAX models were not suitable due to the inconsistent engine lifecycle trends.
+                This project is the final capstone for the IBM Data Science Professional Certificate. The goal is to predict whether the Falcon 9 first stage will land successfully, which is crucial for reducing launch costs and enabling reusability.
+                The project involves data collection, analysis, machine learning, and interactive visualizations.
               </p>
             </div>
           </div>
@@ -154,86 +159,143 @@
     </section><!-- /Portfolio Details Section -->
 
     <section id="project details", class="project details section ">
+      <!--Challenge Section-->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Problem Statement</h2>
-        <p>There is no denying that engine failures can be catastrophic leading to costly maintenance, operational disruptions and safety risks. Therefore, prediciting an engine's remaining useful life or RUL is crucial for preventive maintenance and reducing unexpected failures. For this project, NASA put out an open challenge of their CMAPSS dataset with the goal to develop a predictive model to estimate the degredation of their turbofan engines overtime. Through these predictions, proactive maintenance measures can be implemented, saving costs and improving reliability in aerospace operations.</p>
-        
-      </div><!-- End of Problem Statement -->
-
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Goals & Challenges</h2>
-        <p>I initially pursued this project to expand on my IBM Data Science course and build my portfolio. However, it introduced me to Time-Series analysis, a concept I was unfamiliar with. Over the following weeks, I explored time-series methods, initially considering a SARIMAX model to solve this problem by treating the number of engines as the seasonal component, engine cycles as the time component, and sensors with operational settings as exogenous factors. However, due to inconsistent engine lifecycles, this approach proved unsuitable. Instead, I opted for a RandomForest regression model trained on datasets that incorporated time-series features like moving averages and consecutive differences. This allowed me to avoid the complexity of deep learning models like CNNs or LSTMs while maintaining accuracy.</p>
-      </div><!-- End of Problem Statement -->
-    
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Dataset Description</h2>
-        <p>The dataset consists of three files:</p>
-        <ul style="margin-top: 10px; margin-bottom: 12px;">
-          <li>Training Data (train_FD001.txt): Contains run-to-failure data for 100 engines.</li>
-          <li>Test Data (test_FD001.txt): Contains operational data for 100 engines, stopped before failure.</li>
-          <li>RUL Data (RUL_FD001.txt): Contains the actual RUL values for the test engines at the point of failure.</li>
-        </ul>
-        <p>Each engine is monitored using <i>21</i> sensors and <i>3</i> operational settings, recorded over multiple cycles. The dataset includes noise and anomalies, which were addressed during preprocessing.</p>
-      </div><!-- End of Dataset Description -->
-
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Methodology</h2>
-        <p>The project followed the following steps:</p>
-        <ul style="margin-top: 10px; margin-bottom: 12px;">
-          <li>Static columns (e.g., OpSet_3, Sensor_1, etc.) were removed to reduce dimensionality.</li>
-          <li>Anomalies were detected and replaced using polynomial regression and percentile-based methods.</li>
-          <li>Time-series features like moving averages and consecutive differences were introduced to capture trends.</li>
-          <li>A Random Forest Regressor was used to predict RUL.</li>
-          <li>The model was trained on the preprocessed training data and evaluated on the test set.</li>
-          <li>Performance metrics like MSE, RMSE, MAE, MAPE, and R² were calculated.</li>
-          <li>Predicted RUL values were compared against actual RUL values.</li>
-        </ul>
-      </div>
-
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Data Visuals</h2>
-        <p>Here are some relevant images taken throughout the project along with their descriptions.</p>
-      </div>
-
-      <div class="container section-title" data-aos="fade-up">
-        <img src="assets/img/predictive maintenance model/SubPlot_All Sensors LifeCycle (Global Representation)_Train Set.png" alt="" style="display: block; margin: 0 auto; max-width: 80%; height: auto;">
-        <p style="margin-top: 20px;">This graph visualizes the lifecycle of all engines, color-coded across 3 operational settings and 21 sensors of the training set.
-          It highlights global degradation trends, with some sensors remaining constant (suitable for omission) and others showing accelerating, decelerating, or mixed patterns.
-          <i>Sensors 9 & 14</i> exhibit mixed trends, while <i>Operational Setting 2</i> has discrete values.
+        <h2>🌍 The Challenge: Making Spaceflight Affordable</h2>
+        <p>Space exploration is expensive—really expensive. Traditional rockets are single-use, meaning each mission comes with a massive price tag.
+          Enter SpaceX. By designing the Falcon 9 first stage to be reusable, they've slashed launch costs from $165 million to just $62 million. But here's the catch: landing a booster isn't guaranteed.
+          Successful landings depend on multiple factors:
         </p>
-      </div>
-
-      <div class="container section-title" data-aos="fade-up">
-        <img src="assets/img/predictive maintenance model/Engine 59_Sensor 9_Anomaly Plot.png" alt="" style="display: block; margin: 0 auto; max-width: 80%; height: auto;">
-        <img src="assets/img/predictive maintenance model/Engine 59_Sensor 9_Anomaly Handled Plot.png" alt="" style="display: block; margin: 0 auto; max-width: 80%; height: auto;">
-        <p style="margin-top: 20px;">The two images highlight the before & after stages of the anomaly handling process. Using a percentile-based method, 5% of the extreme ends of the data was taken as anomalies.
-          These anomalies were determined by taking the difference between the predicted datapoints, from the polynomial regression line, and the actual datapoints.
-          Upon identifying the anomalies, they were replaced by the predicted datapoints, as dropping them would reduce the overall data quantity.</p>
-      </div>
-
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Results</h2>
-        <ul style="margin-top: 10px; margin-bottom: 12px;">
-          <li>Mean Squared Error (MSE): 661.31</li>
-            <li>Mean Squared Error (RMSE): 25.72</li>
-            <li>Absolute Error (MAE): 19.41</li>
-            <li>Absolute Percentage Error (MAPE): 0.31</li>
-            <li>R² Score: 0.62</li>
+        <ul class="emoji-ticks" style="margin-top: 14px;">
+          <li>Payload mass (how heavy is the cargo?)</li>
+          <li>Orbit type (where is the rocket headed?)</li>
+          <li>Launch site conditions</li>
         </ul>
-        <p style="margin-top: 20px;">The images below indicate the result differences between the predicted and actual RULs</p>
-      </div>
+        <p>💡 Can we predict whether a Falcon 9 booster will land successfully? That's exactly what this project sets out to do.</p>
+      </div><!--Challenge Section End -->
 
+      <!--Project Goals Section-->
       <div class="container section-title" data-aos="fade-up">
-        <img src="assets/img/predictive maintenance model/Actual vs Predicted RULs_Max LifeCycle.png" alt="" style="display: block; margin: 0 auto; max-width: 90%; height: auto;">
-        <img src="assets/img/predictive maintenance model/Actual vs Predicted RULs_Line Plot.png" alt="" style="display: block; margin: 0 auto; max-width: 90%; height: auto;">
-      </div>
+        <h2>🎯 Project Goals & Learning Experience</h2>
+        <p>This project was my IBM Data Science Capstone, where I applied real-world data science, machine learning, and interactive visualizations to tackle a complex problem.</p>
+        <h5 style="margin-top: 14px; margin-bottom: 14px;">Skills Utilized</h5>
+        <ul class="emoji-ticks">
+          <li>Collect & clean launch data from APIs and web scraping.</li>
+          <li>Analyze key factors influencing landing success.</li>
+          <li>Build a machine learning model to predict outcomes.</li>
+          <li>Develop an interactive dashboard to explore the data visually.</li>
+        </ul>
+        <h5 style="margin-top: 14px; margin-bottom: 14px;">Challenges Faced</h5>
+        <ul class="emoji-alerts">
+          <li>Making sense of aerospace concepts (like orbit mechanics).</li>
+          <li>Handling missing & inconsistent data across multiple sources.</li>
+          <li>Selecting the best machine learning model for classification.</li>
+        </ul>
 
+      </div><!-- Project Goals Section End -->
+    
+      <!--Mission-->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Conclusion</h2>
-        <p>The predictive maintenance model successfully forecasts the RUL of turbofan engines with reasonable accuracy. The use of time-series features and robust anomaly handling improved the model's performance. However, there is room for improvement in handling noise and capturing complex trends.</p>
-      </div>
+        <h2>📊 The Data Behind the Mission</h2>
+        <p>To build accurate predictions, I worked with multiple datasets:</p>
+        <ul class="emoji-pins" style="margin-top: 14px; margin-bottom: 14px;">
+          <li>API Data: Directly pulled from SpaceX's official launch records.</li>
+          <li>Web Scraped Data: Extracted historical launch records from Wikipedia.</li>
+          <li>Geospatial Data: Mapped the exact GPS locations of launch sites.</li>
+          <li> SQL Database: Used SQL queries to analyze trends and mission outcomes.</li>
+          <li>Machine Learning Dataset: Engineered key features like payload mass, orbit type, and flight history.</li>
+        </ul>
+        <p>Every dataset played a critical role in shaping the final predictions.</p>
+      </div><!-- Mission End -->
 
-    </section><!-- End of Project Details Section -->
+      <!--Process-->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>🔬 The Process: From Raw Data to Predictions</h2>
+
+        <h5>1️⃣ Collecting & Wrangling the Data</h5>
+        <ul class="emoji-pins" style="margin-top: 14px; margin-bottom: 14px;">
+          <li>API requests & web scraping to build a complete launch dataset.</li>
+          <li>Cleaning & structuring the data for easy analysis.</li>
+        </ul>
+
+        <h5>2️⃣ Exploratory Data Analysis (EDA)</h5>
+        <ul class="emoji-pins" style="margin-top: 14px; margin-bottom: 14px;">
+          <li>Which factors impact landing success?</li>
+          <li>How do orbit type, payload weight, and launch site affect outcomes?</li>
+        </ul>
+        <div class="container section-title" data-aos="fade-up">
+          <img src="assets/img/SpaceX Capstone/dash_payload vs succes outcome.png" alt="" style="display: block; margin: 0 auto; max-width: 100%; height: auto;">
+          <img src="assets/img/SpaceX Capstone/Flight Number vs Orbit.png" alt="" style="display: block; margin: 0 auto; max-width: 100%; height: auto;">
+        </div>
+
+        <h5>3️⃣ SQL-Based Data Analysis</h5>
+        <ul class="emoji-pins" style="margin-top: 14px; margin-bottom: 14px;">
+          <li>Used SQL queries to explore payload mass trends & mission outcomes.</li>
+        </ul>
+        <div class="container section-title" data-aos="fade-up">
+          <img src="assets/img/SpaceX Capstone/Boosters 4000 & 6000.png" alt="" style="display: block; margin: 0 auto; max-width: 100%; height: auto;">
+        </div>
+
+        <h5>4️⃣ Mapping the Launch Sites with Folium</h5>
+        <ul class="emoji-pins" style="margin-top: 14px; margin-bottom: 14px;">
+          <li>Visualized Falcon 9 launch sites using interactive maps.</li>
+          <li>Analyzed their proximity to coastlines, highways, and infrastructure.</li>
+        </ul>
+        <div class="container section-title" data-aos="fade-up">
+          <img src="assets/img/SpaceX Capstone/folium_launch sites.png" alt="" style="display: block; margin: 0 auto; max-width: 90%; height: auto; margin-top: 10px; margin-bottom: 10px">
+          <img src="assets/img/SpaceX Capstone/folium_colour launch outcomes.png" alt="" style="display: block; margin: 0 auto; max-width: 90%; height: auto; margin-top: 10px; margin-bottom: 10px">
+          <img src="assets/img/SpaceX Capstone/folium_landmarks.png" alt="" style="display: block; margin: 0 auto; max-width: 90%; height: auto; margin-top: 10px; margin-bottom: 10px">
+        </div>
+
+        <h5>5️⃣ Machine Learning: Predicting Landing Success</h5>
+        <p style="margin-top: 14px;">📌 Tested multiple models:</p>
+        <ul style="margin-bottom: 14px;">
+          <li>Logistic Regression ✅</li>
+          <li>Decision Trees ✅</li>
+          <li>Support Vector Machines (SVM) ✅</li>
+          <li>K-Nearest Neighbors (KNN) ✅</li>
+        </ul>
+        <p style="margin-top: 14px; margin-bottom: 14px;">📌 Selected KNN as the best model for its accuracy & simplicity.</p>
+        <div class="container section-title" data-aos="fade-up">
+          <img src="assets/img/SpaceX Capstone/Accuracy of different classification models.png" alt="" style="display: block; margin: 0 auto; max-width: 100%; height: auto; margin-top: 10px; margin-bottom: 10px">
+          <img src="assets/img/SpaceX Capstone/KNN Confusion Matrix.png" alt="" style="display: block; margin: 0 auto; max-width: 100%; height: auto; margin-top: 10px; margin-bottom: 10px">
+        </div>
+
+        <h5>6️⃣ Interactive Dashboard with Dash & Plotly</h5>
+        <p style="margin-top: 14px;">📌 Built a web-based dashboard where users can explore:</p>
+        <ul class="emoji-ticks" style="margin-top: 6px; margin-bottom: 14px;">
+          <li>Launch success rates per site.</li>
+          <li>Payload mass vs. success probability.</li>
+          <li>Mission outcome breakdown.</li>
+        </ul>
+        <div class="container section-title" data-aos="fade-up">
+          <img src="assets/img/SpaceX Capstone/Dashboard sample.png" alt="" style="display: block; margin: 0 auto; max-width: 100%; height: auto; margin-top: 10px; margin-bottom: 10px">
+        </div>
+      </div><!-- Process End -->
+
+      <!--Results-->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>🚀 The Results: What Did We Learn?</h2>
+        <ul class="emoji-ticks" style="margin-top: 14px; margin-bottom: 14px;">
+          <li>Payload Mass Matters: Heavier payloads decrease landing success.</li>
+          <li>Orbit Type Plays a Role: Low Earth Orbit (LEO) has the highest success rate.</li>
+          <li>Some Launch Sites Are Better: Kennedy Space Center outperforms others.</li>
+        </ul>
+        <p>📌 Machine Learning Model Performance:</p>
+        <ul style="margin-bottom: 14px;">
+          <li>Best Model: KNN</li>
+          <li>Accuracy: 83.4%</li>
+          <li>False Positives: A few unsuccessful landings were misclassified as successes.</li>
+        </ul>
+      </div> <!-- Results End -->
+
+      <!--Explore Project-->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>📂 Explore the Project</h2>
+        <p>💻 Check out the full project on GitHub: <a href="https://github.com/STBreeze/IBM-Data-Science-Capstone.git">here</a></p>
+      </div> <!-- Explore Project End -->
+
+    </section>
 
 
 
